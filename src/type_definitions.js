@@ -1,5 +1,15 @@
 // @flow
 
+declare type URL = string
+declare type CLASS =
+  | 'Thing'
+  | 'Person'
+  | 'Event'
+  | 'Action'
+  | 'Place'
+  | 'Organization'
+
+
 declare type ActionStatusType =
   | 'ActiveActionStatus'
   | 'PotentialActionStatus'
@@ -7,22 +17,13 @@ declare type ActionStatusType =
   | 'FailedActionStatus';
 
 export interface Thing {
-  type: string,
+  type: CLASS,
   name?: string,
   description?: string,
-  url?: string
+  url?: URL
 }
 
-declare interface Person {
-  type: 'Person'
-}
-
-declare interface Organization {
-  type: 'Organization'
-}
-
-export interface EntryPoint extends Thing {
-  type: 'EntryPoint',
+export interface EntryPoint {
   httpMethod: string,
   urlTemplate: string,
   contentType: string,
@@ -34,7 +35,7 @@ export interface EntryPoint extends Thing {
 export interface Action {
   type: string,
   actionStatus?: ActionStatusType,
-  agent?: Person | Organization,
+  agent?: Thing,
   endTime?: Date,
   error?: Thing,
   instrument?: Thing,
@@ -45,5 +46,5 @@ export interface Action {
   startTime?: Date,
   target?: EntryPoint,
   id: string,
-  url: string
+  url: URL
 }

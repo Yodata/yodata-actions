@@ -2,10 +2,22 @@
 
 import stamp from 'stampit'
 import TypedObject from './TypedObject'
+import flow from 'lodash/flow'
 
-const assignTo = key => function (value) {
-  return Action({ ...this, [key]: value })
-}
+const assignTo = key =>
+  function (value) {
+    return Action({ ...this, [key]: value });
+  };
+
+const mapStringValueToProp = key =>
+  function (value) {
+    if (typeof value === 'string') {
+      return { [key]: value };
+    }
+    return value;
+  };
+
+const mapAssign = (mapKey, assignKey) => flow(mapStringValueToProp(mapKey), assignTo(assignKey))
 
 const actionMethods = {
   the: assignTo('object'),
@@ -38,21 +50,16 @@ const actionMethods = {
       error,
       endTime: String(new Date()),
       actionStatus: 'FailedActionStatus',
-    })
+    });
   },
-}
+  flow: mapAssign('id', 'flow'),
+};
 
 const Action = stamp(TypedObject, {
   properties: {
     type: 'Action',
   },
-  methods: actionMethods
-})
+  methods: actionMethods,
+});
 
-export default Action
-
-export function createAction(value: string | TypedObject): Action {
-  return Action(value);
-}
-
-
+export default Action;

@@ -1,9 +1,12 @@
 {
-  "name": "yodata-actions",
+  "name": "@yodata/actions",
   "version": "0.0.1",
-  "description": "Library for creating yodata actions.",
+  "description": "Create and validate schema.org/Actions in a uniform, consistent format.",
   "main": "index.js",
-  "repository": "https://github.com/Yodata/yodata-actions.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yodata/yodata-actions.git"
+  },
   "author": "yodata <dave@yodata.io>",
   "license": "MIT",
   "devDependencies": {
@@ -44,5 +47,15 @@
       "json",
       "es6"
     ]
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Yodata/yodata-actions/issues"
+  },
+  "homepage": "https://github.com/Yodata/yodata-actions#readme",
+  "keywords": [
+    "schema.org",
+    "actions",
+    "events",
+    "rxjs"
+  ]
 }

@@ -1,5 +1,5 @@
-import Action from '../action';
-import tn from '../typed';
+import Action from '../action'
+import tn from '../typed'
 
 const beatles = tn('MusicGroup', 'Beatles');
 const john = tn('Person', 'john');
@@ -12,7 +12,7 @@ const app = tn('SoftwareApplication', 'myApp');
 describe('Creating Actions', () => {
   test('Action() => {type: Action}', () => {
     expect(Action()).toMatchObject({
-      type: 'Action'
+      type: 'Action',
     });
   });
 
@@ -30,7 +30,7 @@ describe('Creating Actions', () => {
     let action = Action({ type: 'AddAction', object: john });
     expect(action).toMatchObject({
       type: 'AddAction',
-      object: john
+      object: john,
     });
   });
 });
@@ -38,7 +38,7 @@ describe('Creating Actions', () => {
 describe('Action chaining API', () => {
   test('action.ofType() => action.type', () => {
     expect(new Action().ofType('BuyAction')).toMatchObject({
-      type: 'BuyAction'
+      type: 'BuyAction',
     });
   });
   test('action.by(person)', () => {
@@ -48,21 +48,27 @@ describe('Action chaining API', () => {
     expect(Action('AddAction').the(paul).toCollection(contacts)).toMatchObject({
       type: 'AddAction',
       object: paul,
-      targetCollection: contacts
+      targetCollection: contacts,
     });
   });
   test('Action.using(instrument)', () => {
     expect(Action('AddAction').the(paul).using(app)).toMatchObject({
       type: 'AddAction',
       object: paul,
-      instrument: app
+      instrument: app,
     });
   });
   test('Action.with([participant])', () => {
     expect(
-      Action().with([john, paul, george, ringo])
-    ).toHaveProperty('participant', [john, paul, george, ringo]);
+      Action().with([ john, paul, george, ringo ]),
+    ).toHaveProperty('participant', [ john, paul, george, ringo ]);
   });
+  test('composed property handler (flow)', () => {
+    let action = Action();
+    let nextAction = action.flow('flow-test');
+    expect(action).toMatchObject({ type: 'Action' })
+    expect(nextAction).toMatchObject({ type: 'Action', flow: { id: 'flow-test' } })
+  })
 });
 
 describe('Action immutability', () => {
@@ -72,12 +78,12 @@ describe('Action immutability', () => {
 
     expect(a).toMatchObject({
       type: 'Action',
-      participant: paul
+      participant: paul,
     });
 
     expect(b).toMatchObject({
       type: 'CreateAction',
-      participant: paul
+      participant: paul,
     });
   });
 });
@@ -86,7 +92,7 @@ describe('Action Serialization/Deserialization', () => {
   let a = Action({ type: 'CreateAction' })
     .who(paul)
     .the(beatles)
-    .with([john, george, ringo])
+    .with([ john, george, ringo ])
     .complete();
 
   let serialized = JSON.stringify(a);
@@ -110,7 +116,7 @@ describe('Action helpers', () => {
   test(`action.complete() = set endTime and CompletedActionStatus`, () => {
     let action = new Action().complete();
     expect(action).toMatchObject({
-      actionStatus: 'CompletedActionStatus'
+      actionStatus: 'CompletedActionStatus',
     });
     expect(action.endTime).toBeDefined();
   });

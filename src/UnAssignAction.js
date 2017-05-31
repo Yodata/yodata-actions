@@ -3,10 +3,11 @@
 import Action from './action'
 
 /**
- * Agent assigns the object to one or more recipients
+ * Object is unassigned from recipient
  *
- * @param {Thing<Object>} object - the Thing being assigned
- * @param {Thing<Object>} recipient - The receiving Person or Organization
+ * @param {Object} object - the Thing being assigned
+ * @param {Object} recipient - The receiving Person or Organization
+ * @returns {Action}
  *
  */
 const UnAssignAction = (object: Object, recipient: Object): Action =>

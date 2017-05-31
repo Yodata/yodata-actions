@@ -1,4 +1,4 @@
-import DeleteAction from '../delete_action';
+import DeleteAction from '../DeleteAction';
 import typed from '../typed';
 
 test('DeleteAction', () => {
