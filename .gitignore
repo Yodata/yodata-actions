@@ -75,7 +75,5 @@ gen### MonoDevelop template
 *.pidb
 *.resources
 test-results/
-
-/lib/
-/dist/
+dist/__tests__
 /.yarnclean
