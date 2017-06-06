@@ -1,10 +1,9 @@
-import Action from './action';
+import Action from './action'
 
 /**
  * The result object is updated in targetCollection
  * @param {Object} result
- * @param {Object} targetCollection
- * @param type
+ * @param {Object} targetCollectiontype
  * @constructor
  */
 const UpdateAction = (result, targetCollection) =>

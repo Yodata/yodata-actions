@@ -2,7 +2,7 @@
   "name": "@yodata/actions",
   "version": "0.0.1",
   "description": "Create and validate schema.org/Actions in a uniform, consistent format.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Yodata/yodata-actions.git"

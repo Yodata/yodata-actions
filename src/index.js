@@ -13,4 +13,5 @@ export { default as AssignAction } from './AssignAction'
 export { default as CreateAction } from './CreateAction'
 export { default as RegisterAction } from './RegisterAction'
 export { default as RejectAction } from './RejectAction'
+export { default as UpdateAction } from './UpdateAction'
 

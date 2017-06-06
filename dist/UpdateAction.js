@@ -13,8 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * The result object is updated in targetCollection
  * @param {Object} result
- * @param {Object} targetCollection
- * @param type
+ * @param {Object} targetCollectiontype
  * @constructor
  */
 var UpdateAction = function UpdateAction(result, targetCollection) {

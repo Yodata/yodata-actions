@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RejectAction = exports.RegisterAction = exports.CreateAction = exports.AssignAction = exports.AcceptAction = exports.AddAction = exports.Action = exports.Organization = exports.Person = exports.Thing = undefined;
+exports.UpdateAction = exports.RejectAction = exports.RegisterAction = exports.CreateAction = exports.AssignAction = exports.AcceptAction = exports.AddAction = exports.Action = exports.Organization = exports.Person = exports.Thing = undefined;
 
 var _AddAction = require('./AddAction');
 
@@ -56,6 +56,15 @@ Object.defineProperty(exports, 'RejectAction', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_RejectAction).default;
+  }
+});
+
+var _UpdateAction = require('./UpdateAction');
+
+Object.defineProperty(exports, 'UpdateAction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_UpdateAction).default;
   }
 });
 
