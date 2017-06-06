@@ -1,7 +1,7 @@
-import Action from './action';
+import Action from './action'
 
 /**
- * Object is assigned to to the recipient, by agent
+ * Object (offer) is rescinded
  * @param {string|Object} object
  * @param {string|Object} recipient
  * @returns {Action}
@@ -12,8 +12,8 @@ import Action from './action';
  * let action = AssignAction(bob, alice)
  * // => {type: AssignAction, object: bob, recipient alice}
  */
-function AssignAction(object, recipient) {
-  return Action({ type: 'AssignAction', object, recipient });
+function RescindAction(object, recipient) {
+  return Action({ type: 'RescindAction', object, recipient });
 }
 
-export default AssignAction;
+export default RescindAction;

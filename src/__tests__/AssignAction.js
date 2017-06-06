@@ -10,5 +10,3 @@ test('assignAction(object, recipient)', () => {
     recipient: alice,
   })
 })
-
-

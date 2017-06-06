@@ -3,7 +3,7 @@ import Action from './action'
 /**
  * The result object is updated in targetCollection
  * @param {Object} result
- * @param {Object} targetCollectiontype
+ * @param {Object} targetCollection
  * @constructor
  */
 const UpdateAction = (result, targetCollection) =>
