@@ -3,16 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.UpdateAction = exports.RejectAction = exports.RegisterAction = exports.CreateAction = exports.AssignAction = exports.AcceptAction = exports.AddAction = exports.Action = exports.Organization = exports.Person = exports.Thing = undefined;
-
-var _AddAction = require('./AddAction');
-
-Object.defineProperty(exports, 'AddAction', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_AddAction).default;
-  }
-});
+exports.UpdateAction = exports.UnRegisterAction = exports.UnAssignAction = exports.RescindAction = exports.RemoveAction = exports.RejectAction = exports.RegisterAction = exports.DeleteAction = exports.CreateAction = exports.AssignAction = exports.AddAction = exports.AcceptAction = exports.Action = exports.Organization = exports.Person = exports.Thing = undefined;
 
 var _AcceptAction = require('./AcceptAction');
 
@@ -20,6 +11,15 @@ Object.defineProperty(exports, 'AcceptAction', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AcceptAction).default;
+  }
+});
+
+var _AddAction = require('./AddAction');
+
+Object.defineProperty(exports, 'AddAction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_AddAction).default;
   }
 });
 
@@ -41,6 +41,15 @@ Object.defineProperty(exports, 'CreateAction', {
   }
 });
 
+var _DeleteAction = require('./DeleteAction');
+
+Object.defineProperty(exports, 'DeleteAction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_DeleteAction).default;
+  }
+});
+
 var _RegisterAction = require('./RegisterAction');
 
 Object.defineProperty(exports, 'RegisterAction', {
@@ -56,6 +65,42 @@ Object.defineProperty(exports, 'RejectAction', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_RejectAction).default;
+  }
+});
+
+var _RemoveAction = require('./RemoveAction');
+
+Object.defineProperty(exports, 'RemoveAction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_RemoveAction).default;
+  }
+});
+
+var _RescindAction = require('./RescindAction');
+
+Object.defineProperty(exports, 'RescindAction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_RescindAction).default;
+  }
+});
+
+var _UnAssignAction = require('./UnAssignAction');
+
+Object.defineProperty(exports, 'UnAssignAction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_UnAssignAction).default;
+  }
+});
+
+var _UnRegisterAction = require('./UnRegisterAction');
+
+Object.defineProperty(exports, 'UnRegisterAction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_UnRegisterAction).default;
   }
 });
 
