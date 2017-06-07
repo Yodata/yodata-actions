@@ -1,5 +1,5 @@
-import Action from '../action'
-import tn from '../typed'
+import Action from '../src/action'
+import tn from '../src/typed'
 
 const beatles = tn('MusicGroup', 'Beatles');
 const john = tn('Person', 'john');

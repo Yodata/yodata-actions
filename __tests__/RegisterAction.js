@@ -1,5 +1,5 @@
-import RegisterAction from '../RegisterAction'
-import typed from '../typed'
+import RegisterAction from '../src/RegisterAction'
+import typed from '../src/typed'
 
 test('RegisterAction', () => {
   let type = 'RegisterAction'

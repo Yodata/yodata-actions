@@ -36,7 +36,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "yarn run clean && babel src/*.js -d dist",
+    "build": "yarn run clean && babel src -d dist",
     "test": "jest --watch",
     "start": "node ./dist/index"
   },

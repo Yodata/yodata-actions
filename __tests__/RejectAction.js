@@ -1,5 +1,5 @@
-import RejectAction from '../RejectAction'
-import typed from '../typed'
+import RejectAction from '../src/RejectAction'
+import typed from '../src/typed'
 
 test('RejectAction', () => {
   let sender = typed('Person', 'Alice');

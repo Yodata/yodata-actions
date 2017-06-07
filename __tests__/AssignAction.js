@@ -1,5 +1,5 @@
-import assignAction from '../AssignAction'
-import typed from '../typed';
+import assignAction from '../src/AssignAction'
+import typed from '../src/typed';
 
 test('assignAction(object, recipient)', () => {
   let bob = typed('Person', 'Bob');

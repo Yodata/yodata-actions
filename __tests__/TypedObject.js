@@ -1,4 +1,4 @@
-import TypedObject from '../TypedObject'
+import TypedObject from '../src/TypedObject'
 
 test('TypedObject(name) => {type: name}', () => {
   let it = new TypedObject({ type: 'Person', name: 'John' })

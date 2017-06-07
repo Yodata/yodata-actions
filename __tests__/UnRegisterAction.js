@@ -1,5 +1,5 @@
-import UnRegisterAction from '../UnRegisterAction'
-import typed from '../typed';
+import UnRegisterAction from '../src/UnRegisterAction'
+import typed from '../src/typed';
 
 test('UnRegisterAction', () => {
   let website = typed('Website', 'MyWebsite');

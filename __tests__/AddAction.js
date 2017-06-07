@@ -1,6 +1,6 @@
-import AddAction from '../AddAction';
+import AddAction from '../src/AddAction';
 
-import tn from '../typed';
+import tn from '../src/typed';
 test(`addAction(object, targetCollection)`, () => {
   let type = 'AddAction';
   let object = tn('Person', 'John');

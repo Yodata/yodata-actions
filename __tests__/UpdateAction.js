@@ -1,5 +1,5 @@
-import UpdateAction from '../UpdateAction'
-import typed from '../typed';
+import UpdateAction from '../src/UpdateAction'
+import typed from '../src/typed';
 
 test('UpdateAction', () => {
   let result = typed('Person', 'Alice');

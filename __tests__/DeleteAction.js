@@ -1,5 +1,5 @@
-import DeleteAction from '../DeleteAction';
-import typed from '../typed';
+import DeleteAction from '../src/DeleteAction';
+import typed from '../src/typed';
 
 test('DeleteAction', () => {
   let movie = typed('Movie', 'Batman vs. Superman');

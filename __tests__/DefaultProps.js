@@ -1,4 +1,4 @@
-import DefaultProps from '../DefaultProps'
+import DefaultProps from '../src/DefaultProps'
 
 test(`can set defaultProps`, () => {
   let defaultProps = { a: 'a' }
