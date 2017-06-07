@@ -1,6 +1,6 @@
 {
   "name": "@yodata/actions",
-  "version": "0.0.2-0",
+  "version": "0.0.2-1",
   "description": "Create and validate schema.org/Actions in a uniform, consistent format.",
   "main": "dist/index.js",
   "repository": {
