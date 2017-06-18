@@ -10,10 +10,11 @@ Generators for http://schema.org/Actions with a consistent and uniform JSON form
 yarn add @yodata/actions - or npm i --save @yodata/actions
 ```
 
-And repeat
+### Usage
 
-```
-until finished
+```js
+const
+
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
