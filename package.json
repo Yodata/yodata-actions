@@ -1,5 +1,5 @@
 {
-  "name": "@yodata/actions",
+  "name": "yodata/actions",
   "version": "0.0.2",
   "description": "Create and validate schema.org/Actions in a uniform, consistent format.",
   "main": "dist/index.js",
