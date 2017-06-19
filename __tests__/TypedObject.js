@@ -1,18 +1,18 @@
 import TypedObject from '../src/TypedObject'
 
-test('TypedObject(name) => {type: name}', () => {
-  let it = new TypedObject({ type: 'Person', name: 'John' })
+test('TypedObject(typeName: string) => {type: typeName}', () => {
+  let it = new TypedObject('Person')
   expect(it).toMatchObject({
-    type: 'Person',
-    name: 'John',
+    type: 'Person'
   })
 })
 
 test('TypedObject(object) => {...object}', () => {
-  let it = new TypedObject({ type: 'Thing', name: 'it' })
+  let it = new TypedObject({ type: 'Thing', name: 'it', id: 1 })
   expect(it).toMatchObject({
     type: 'Thing',
     name: 'it',
+    id: 1
   })
 })
 

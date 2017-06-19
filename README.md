@@ -7,13 +7,30 @@ Generators for http://schema.org/Actions with a consistent and uniform JSON form
 ### Installing
 
 ```
-yarn add @yodata/actions - or npm i --save @yodata/actions
+npm i --save @yodata/actions
 ```
 
 ### Usage
 
 ```js
-const
+import {Action, TypedObject} from @yodata/actions
+
+let bob =  TypedObject('Person','Bob')
+let alice =  TypedObject('Person','Alice')
+let book  = TypedObject('Book','The Little Prince')
+
+// Bob gives the book to Alice
+let action = Action('GiveAction').the(book).from(bob).to(alice)
+
+console.log(action)
+// =>
+    {
+        context: 'http://schema.org/',
+        type: 'GiveAction',
+        object: { context: 'http://schema.org/', type: 'Book' },
+        sender: { context: 'http://schema.org/', type: 'Person' },
+        recipient: { context: 'http://schema.org/', type: 'Person' }
+    }
 
 ```
 

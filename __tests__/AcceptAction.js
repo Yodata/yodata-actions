@@ -1,5 +1,6 @@
 import AcceptAction from '../src/AcceptAction'
 import typed from '../src/typed';
+import {Context} from 'yodata-context';
 
 test('AcceptAction', () => {
   let sender = typed('Person', 'Alice');

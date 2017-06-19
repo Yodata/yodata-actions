@@ -2078,7 +2078,7 @@ jest-changed-files@^20.0.3:
   version "20.0.3"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-20.0.3.tgz#9394d5cc65c438406149bef1bf4d52b68e03e3f8"
 
-jest-cli@^20.0.3, jest-cli@^20.0.4:
+jest-cli@^20.0.4:
   version "20.0.4"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-20.0.4.tgz#e532b19d88ae5bc6c417e8b0593a6fe954b1dc93"
   dependencies:
@@ -3783,9 +3783,9 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-yodata-context@^1.1.0-0:
-  version "1.1.0-0"
-  resolved "https://registry.yarnpkg.com/yodata-context/-/yodata-context-1.1.0-0.tgz#f6a8b605a6a69ac64108272e2aaffa749d00ca27"
+yodata-context@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/yodata-context/-/yodata-context-1.4.2.tgz#643157304f8e04d3715b18047193c3cac4d67359"
   dependencies:
     axios "^0.16.2"
     immutable "^3.8.1"

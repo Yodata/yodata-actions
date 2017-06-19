@@ -60,7 +60,7 @@ describe('Action chaining API', () => {
   });
   test('Action.with([participant])', () => {
     expect(
-      Action().with([ john, paul, george, ringo ]),
+      Action().and([ john, paul, george, ringo ]),
     ).toHaveProperty('participant', [ john, paul, george, ringo ]);
   });
   test('composed property handler (flow)', () => {
@@ -73,7 +73,7 @@ describe('Action chaining API', () => {
 
 describe('Action immutability', () => {
   test('chain methods return new (immutable) Action', () => {
-    let a = new Action({ type: 'Action' }).with(paul);
+    let a = new Action({ type: 'Action' }).and(paul);
     let b = a.ofType('CreateAction');
 
     expect(a).toMatchObject({
@@ -107,6 +107,16 @@ describe('Action Serialization/Deserialization', () => {
 });
 
 describe('Action helpers', () => {
+  test(`Action.add`, () => {
+    let key = 'key'
+    let next = new Action().add(key, 1);
+    expect(next).toMatchObject({ key: [ 1 ] })
+    next = next.add(key, 2)
+    expect(next).toMatchObject({ key: [ 1, 2 ] })
+    next = next.add(key, 2)
+    expect(next).toMatchObject({ key: [ 1, 2 ] })
+  });
+
   test(`action.start() = set startTime and ActiveActionStatus`, () => {
     let action = new Action().start();
     expect(action).toHaveProperty('actionStatus', 'ActiveActionStatus');
