@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/Yodata/yodata-actions.git"
   },
+  "files": [
+    "dist"
+  ],
   "author": "yodata <dave@yodata.io>",
   "license": "MIT",
   "devDependencies": {
