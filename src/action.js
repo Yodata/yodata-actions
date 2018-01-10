@@ -1,29 +1,29 @@
 // @flow
 
-import stamp from 'stampit'
-import TypedObject from './TypedObject'
-import flow from 'lodash/flow'
-import concat from 'lodash/concat';
-
+import stamp from "stampit";
+import TypedObject from "./TypedObject";
+import flow from "lodash/flow";
+import concat from "lodash/concat";
 
 const assignTo = key =>
-  function (value) {
+  function(value) {
     return Action({ ...this, [key]: value });
   };
 
 const mapStringValueToProp = key =>
-  function (value) {
-    if (typeof value === 'string') {
+  function(value) {
+    if (typeof value === "string") {
       return { [key]: value };
     }
     return value;
   };
 
-const mapAssign = (mapKey, assignKey) => flow(mapStringValueToProp(mapKey), assignTo(assignKey))
+const mapAssign = (mapKey, assignKey) =>
+  flow(mapStringValueToProp(mapKey), assignTo(assignKey));
 
 const Action = stamp(TypedObject, {
   properties: {
-    type: 'Action',
+    type: "Action"
   },
   methods: {
     /**
@@ -32,8 +32,8 @@ const Action = stamp(TypedObject, {
      * @param   {*} value
      * @returns {Action} always returns a new action
      */
-    set: function (key: string, value: any) {
-      return Action({ ...this, [key]: value })
+    set: function(key: string, value: any) {
+      return Action({ ...this, [key]: value });
     },
     /**
      * adds value to set at key
@@ -41,52 +41,50 @@ const Action = stamp(TypedObject, {
      * @param   {*}      value
      * @returns {Action} new action
      */
-    add: function (key: string, value: any) {
-      let currentValue = this[ key ] || [];
+    add: function(key: string, value: any) {
+      let currentValue = this[key] || [];
       if (!currentValue.includes(value)) {
         let nextValue = concat(currentValue, value);
-        return Action({ ...this, [key]: nextValue })
+        return Action({ ...this, [key]: nextValue });
       }
       return this;
     },
-    ofType: assignTo('type'),
-    by: assignTo('agent'),
-    who: assignTo('agent'),
-    did: assignTo('type'),
-    the: assignTo('object'),
-    and: assignTo('participant'),
-    using: assignTo('instrument'),
-    with: assignTo('instrument'),
-    toCollection: assignTo('targetCollection'),
-    from: assignTo('sender'),
-    to: assignTo('recipient'),
-    for: assignTo('recipient'),
-    withError: assignTo('error'),
-    flow: mapAssign('id', 'flow'),
-    start: function () {
+    agent: assignTo("agent"),
+    ofType: assignTo("type"),
+    by: assignTo("agent"),
+    who: assignTo("agent"),
+    did: assignTo("type"),
+    the: assignTo("object"),
+    and: assignTo("participant"),
+    using: assignTo("instrument"),
+    with: assignTo("instrument"),
+    toCollection: assignTo("targetCollection"),
+    from: assignTo("sender"),
+    to: assignTo("recipient"),
+    for: assignTo("recipient"),
+    withError: assignTo("error"),
+    flow: mapAssign("id", "flow"),
+    start: function() {
       return new Action({
         ...this,
         startTime: String(new Date()),
-        actionStatus: 'ActiveActionStatus',
+        actionStatus: "ActiveActionStatus"
       });
     },
-    complete: function () {
+    complete: function() {
       return new Action({
         ...this,
-        endTime: String(new Date()),
-        actionStatus: 'CompletedActionStatus',
+        actionStatus: "CompletedActionStatus"
       });
     },
-    failed: function (error) {
+    failed: function(error) {
       return new Action({
         ...this,
         error,
-        endTime: String(new Date()),
-        actionStatus: 'FailedActionStatus',
+        actionStatus: "FailedActionStatus"
       });
-    },
-
-  },
+    }
+  }
 });
 
 export default Action;

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _stampit = require('stampit');
+var _stampit = require("stampit");
 
 var _stampit2 = _interopRequireDefault(_stampit);
 
@@ -14,8 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var TypedObject = (0, _stampit2.default)({
   properties: {
-    context: 'http://schema.org/',
-    type: 'Thing'
+    type: "Thing"
   },
   methods: {
     toString: function toString() {
@@ -28,11 +27,11 @@ var TypedObject = (0, _stampit2.default)({
   init: function init(props, _ref) {
     var instance = _ref.instance;
 
-    switch (typeof props === 'undefined' ? 'undefined' : _typeof(props)) {
-      case 'string':
+    switch (typeof props === "undefined" ? "undefined" : _typeof(props)) {
+      case "string":
         instance.type = props;
         break;
-      case 'object':
+      case "object":
         Object.assign(this, instance, props);
         break;
       default:
