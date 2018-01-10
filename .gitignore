@@ -77,3 +77,6 @@ gen### MonoDevelop template
 test-results/
 dist/__tests__
 /.yarnclean
+
+#OSX
+.DS_store
